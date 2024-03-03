@@ -1,0 +1,30 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header head">
+      <h5 class="modal-title">{{productSingle?.title}}</h5>
+    </div>
+
+    <div class="modal-body body">
+      <div class="imgcont">
+        <img src="{{productSingle?.image}}" alt="product img" class="imgdialog">
+      </div>
+      <div class="description">
+        <p>{{productSingle?.description}}</p>
+      </div>
+      <hr />
+    </div>
+
+    <div class="modal-footer col-lg-12 row footer">
+      <div class="foot1 col-lg-6">
+        <p>{{productSingle?.rating?.rate}}<i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
+        <p>{{productSingle?.rating?.count}}<i class="fa-solid fa-users"></i></p>
+      </div>
+      <div class="foot2 col-lg-6">
+        <p><i class="fa-solid fa-dollar-sign" style="color: #029b23;"></i>Price: {{productSingle?.price}}</p>
+        <p>Categori: {{productSingle?.category}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>

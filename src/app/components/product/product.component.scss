@@ -1,0 +1,261 @@
+header {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.cont {
+    display: grid;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: minmax(100vh, auto);
+    gap: 10px;
+}
+
+.container>h6 {
+    margin: 20px 0px;
+}
+
+h1 {
+    font-size: 3rem;
+    background: #ccc;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+h5 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.cardtitle h6 {
+    color: rgb(157, 85, 240);
+}
+
+/*css para las cartas*/
+.row {
+    margin: 0 !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.containerleft {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.cardcontainer {
+    display: flex;
+    padding: 0 20px;
+    border-radius: 20px;
+}
+
+.bgcard {
+    width: auto;
+    height: auto;
+    padding: 2px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    color: white;
+    height: auto;
+    position: relative;
+    text-align: center;
+}
+
+.cardtitle {
+    color: Black;
+    position: relative;
+    padding: 0 20px;
+    text-align: start;
+}
+
+.cardtitle>p {
+    text-align: start;
+    width: 100%;
+    padding: 0;
+}
+
+.card-bottom {
+    display: flex;
+    margin-top: 20px;
+}
+
+.card-bottom .price {
+    flex: 1;
+    text-align: left;
+}
+
+.card-bottom i {
+    padding-left: 5px;
+}
+
+.card-bottom .rating {
+    flex: 1;
+    text-align: right;
+}
+
+.contimg {
+    height: 200px;
+}
+
+.linehr {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+hr {
+    width: 70%;
+    height: 1px;
+    color: #5b42f3;
+}
+
+.card .cardimg {
+    object-fit: contain;
+    height: 100%;
+    padding: 5px;
+}
+
+.cardtitle>p {
+    height: 50px;
+    padding: 10px;
+    font-size: clamp(12px, 4vw, 16px);
+}
+
+.btnOpen {
+    transform: translate(-50%, 100%);
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: 5px 30px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+.bgbtn {
+    width: auto;
+    height: auto;
+    padding: 2px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+.card:hover .btnOpen {
+    transform: translate(-50%, -250%);
+    opacity: 1;
+}
+
+/*css para modal*/
+.modalClose {
+    display: none;
+    left: 0;
+    top: 0;
+}
+
+.modalOpen {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.473);
+    justify-content: center;
+    align-items: center;
+}
+
+#modalproduct {
+    margin: 0px;
+    padding: 0px;
+}
+
+#modalproduct article {
+    text-align: right;
+}
+
+#modalproduct article i {
+    position: absolute;
+    font-size: 40px;
+    color: #ff4f4f;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    z-index: 7;
+}
+
+#modalproduct article i:hover {
+    transition: all 0.3s;
+}
+
+/*css apratdo filtros*/
+
+.btnLimit {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    color: black;
+}
+
+.contfilters {
+    padding-bottom: 20px;
+}
+
+.btnsOrderCont {
+    margin-top: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bgselect {
+    width: auto;
+    height: auto;
+    padding: 2px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+select option {
+    color: black;
+}
+
+@media (max-width: 992px) {
+    .container {
+        grid-template-columns: 75% 25%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 575px) {}

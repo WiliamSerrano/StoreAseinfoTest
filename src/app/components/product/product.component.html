@@ -1,0 +1,93 @@
+<header>
+    <h1>Aseinfo Store</h1>
+   
+</header>
+<div class="container">
+    <h6 id="contitem">Items </h6>
+</div>
+<div class="container cont">
+    <!-- Contenedor principal para ordenar las cartas -->
+    <div class="containerleft">
+        @for (item of Lista_Productos; track $index) {
+
+        <div class="cardconntainer">
+            <div class="bgcard">
+                <div class="card">
+                    <div class="contimg">
+                        <img class="card-img-top cardimg" src="{{item.image}}" alt="Card image cap">
+                    </div>
+                    <div class="linehr">
+                        <hr />
+                    </div>
+                    <div class="card-block cardtitle">
+                        <h6>{{item.category}}</h6>
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <div class="card-bottom">
+                            <p class="price">{{item.price}}<i class="fa-solid fa-dollar-sign" style="color: #029b23;"></i></p>
+                            <p class="rating">{{item?.rating?.count}}<i class="fa-solid fa-star" style="color: #FFD43B;"></i></p>
+                        </div>
+                    </div>
+
+                        <button type="button" class="btn btn-info btnOpen" (click)="setInfoProduct(item.id)">
+                            Detail
+                        </button>
+                    
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Contenedor para loc controles de filtros  -->
+
+    <aside class="contfilters">
+        <div class="col-lg-12">
+            <div class="bgselect">
+                <input type="number" id="filterlimit" class="form-control" value="5" min="0" />
+            </div>
+        </div>
+        <div class="col-lg-12 divbtn">
+            <div class="bgbtn">
+                <button class="btn col-2 btnLimit" (click)="Get_ProductsLimit()">Limitar</button>
+            </div>
+        </div>
+        <div class="btnsOrderCont">
+            <div class="bgselect">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="selectorder"
+                (change)="Get_OrderPrice($event)">
+                <option>Order by price</option>
+                <option value="up">Order by: highest to lowest price</option>
+                <option value="down">Order by: lowest to highest price</option>
+            </select>
+            </div>
+            <div class="bgselect">
+                <select class="form-select form-select-sm midselect" aria-label=".form-select-sm example"
+                id="selectorderalphabet" (change)="Get_OrderAlphabet($event)">
+                <option>Order by Alphabet</option>
+                <option value="az">Order by: A to Z</option>
+                <option value="za">Order by: Z to A</option>
+            </select>
+            </div>
+            <div class="bgselect">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="selectcategoris"
+                (change)="Get_OrderCategory($event)">
+                @for (categori of List_Categories; track $index) {
+                <option>{{categori}}</option>
+                }
+            </select>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div class="modal" tabindex="-1" id="modalproduct">
+    <article>
+        <i class="fas fa-times-circle" (click)="closeModal()"></i>
+    </article>
+    @if (idProduct > 0) {
+
+    <app-details [ProductId]="idProduct"></app-details>
+
+    }
+</div>
